@@ -1,0 +1,12 @@
+1.pdfdetach — извлечение встроенных файлов (вложений)
+2.pdffonts — анализатор шрифтов
+3.pdfimages — извлечение изображений
+4.pdfinfo — информация о документе
+5.pdfseparate — извлечение страниц
+6.pdfsig — проверка цифровых подписей
+7.pdftocairo — преобразование из PDF в PNG, JPEG, PDF, PS, EPS и SVG на основе Cairo
+8.pdftohtml — преобразование из PDF в HTML
+9.pdftoppm — преобразование из PDF в изображения PPM, PNG и JPEG
+10.pdftops — преобразование из PDF в PostScript (PS)
+11.pdftotext — извлечение текста
+12.pdfunit — объединение документов

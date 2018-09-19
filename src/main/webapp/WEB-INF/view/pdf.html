@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src='https://www.google.com/recaptcha/api.js' async defer></script>
+    <!--<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"-->
+            <!--async defer>-->
+    <!--</script>-->
+    <title>Converter</title>
+</head>
+<body>
+    <form action="" th:action="@{/pdf}" th:object="${multipartDto}" method="POST" enctype="multipart/form-data">
+
+        <label><p>Convert to:</p></label>
+        <p>
+            <select name="converter" th:field="*{checkBox}" >
+                <optgroup label="Convert to">
+                    <option value="txt">.txt</option>
+                    <option value="html">.html</option>
+                </optgroup>
+            </select>
+        </p>
+        <tr>
+            <label><p>Pdf to upload:</p></label>
+            <td><input type="file" th:field="*{multipartFile}" /></td>
+            <td><input type="submit" value="Ok" /></td>
+            <td th:if="${#fields.hasErrors('multipartFile')}" th:errors="*{multipartFile}"></td>
+        </tr>
+        <hr>
+        <div class="g-recaptcha" th:attr="data-sitekey=${@reCaptchaHandler.getReCaptchaSite()}" data-callback="onReCaptchaSuccess" data-expired-callback="onReCaptchaExpired"></div>
+    </form>
+</body>
+</html>

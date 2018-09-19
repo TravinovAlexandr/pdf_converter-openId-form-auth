@@ -1,0 +1,40 @@
+<!doctype html>
+<!--<html lang="en">-->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+</head>
+<body>
+
+    <h1>Login</h1>
+
+    <table>
+        <thead>
+            <form action="" th:action="@{/formLogin}" th:object="${formLoginDto}" method="POST">
+
+                <tr>
+                    <td><label>Insert nick or email.</label></td>
+                    <td><input type="text" th:field="*{username}" /></td>
+                    <td th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Error</td>
+
+                </tr>
+
+                <tr>
+                    <td><label>Insert password.</label></td>
+                    <td><input type="password" th:field="*{password}" /></td>
+                    <td th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password Error</td>
+                </tr>
+
+                <tr>
+                    <td><button type="submit">Ok</button></td>
+                </tr>
+            </form>
+        </thead>
+    </table>
+
+</body>
+</html>
